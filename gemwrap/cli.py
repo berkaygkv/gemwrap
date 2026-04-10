@@ -27,7 +27,7 @@ def main():
         description="Gemini API wrapper with multi-account rotation",
     )
     parser.add_argument("prompt", nargs="?", default=None, help="Prompt text (or pipe via stdin)")
-    parser.add_argument("-m", "--model", default=None, help="Model (e.g. gemini-3.1-pro-preview, gemini-3-flash-preview, gemini-2.5-flash, gemini-2.5-pro)")
+    parser.add_argument("-m", "--model", default=None, help="Model (e.g. gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-flash-lite-preview, gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-lite)")
     parser.add_argument("-a", "--account", default=None, help="Account name from config")
     parser.add_argument("-b", "--backend", default=None, choices=["cli_oauth", "api_key"], help="Force backend")
     parser.add_argument("-t", "--temperature", type=float, default=0.7)

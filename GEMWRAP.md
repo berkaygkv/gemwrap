@@ -35,10 +35,12 @@ gemwrap --stream "Tell me a story"
 gemwrap -s "You are a pirate" "What is recursion?"
 
 # Model selection
-gemwrap -m gemini-2.5-pro "Explain quantum computing"
-gemwrap -m gemini-2.5-flash "Quick summary of X"
-gemwrap -m gemini-3-flash-preview "Hello"
+gemwrap -m gemini-3-flash-preview "Fast response"
 gemwrap -m gemini-3.1-pro-preview "Complex reasoning task"
+gemwrap -m gemini-3.1-flash-lite-preview "Budget-friendly"
+gemwrap -m gemini-2.5-pro "Advanced reasoning"
+gemwrap -m gemini-2.5-flash "Quick summary of X"
+gemwrap -m gemini-2.5-flash-lite "Fastest and cheapest"
 
 # Account selection
 gemwrap -a pro "Hello"          # use pro account
@@ -65,7 +67,7 @@ gemwrap -v "Hello"
 
 | Flag | Short | Description |
 |------|-------|-------------|
-| `--model` | `-m` | Model name (gemini-2.5-flash, gemini-2.5-pro, gemini-3-flash-preview, gemini-3.1-pro-preview, etc.) |
+| `--model` | `-m` | Model name (gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-flash-lite-preview, gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-lite) |
 | `--account` | `-a` | Account name from config |
 | `--backend` | `-b` | Force backend: `cli_oauth` or `api_key` |
 | `--temperature` | `-t` | Temperature (default: 0.7) |
@@ -92,7 +94,7 @@ text = client.generate("Explain decorators")
 # With options
 text = client.generate(
     "Explain quantum computing",
-    model="gemini-2.5-pro",
+    model="gemini-3.1-pro-preview",
     system="Be concise, use bullet points",
     temperature=0.5,
     max_tokens=4096,
@@ -136,7 +138,7 @@ Config file: `~/.config/gemwrap/accounts.json` (auto-created on first run)
       "name": "pro",
       "backend": "cli_oauth",
       "creds_path": "~/.gemini/oauth_creds.json",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3-flash-preview",
       "enabled": true
     },
     {

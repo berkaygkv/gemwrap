@@ -34,7 +34,7 @@ class AccountState:
     def __init__(self, config: dict):
         self.name: str = config["name"]
         self.backend: str = config["backend"]
-        self.model: str = config.get("model", "gemini-3.1-pro-preview")
+        self.model: str = config.get("model", "gemini-3-flash-preview")
         self.enabled: bool = config.get("enabled", True)
         # cli_oauth
         self.creds_path: Optional[Path] = (
@@ -279,7 +279,7 @@ class GeminiClient:
         self, acct: AccountState, prompt: str, *,
         system: Optional[str] = None, history: Optional[list] = None,
         youtube: Optional[str] = None, image: Optional[str] = None,
-        model: str = "gemini-3.1-pro-preview", temperature: float = 0.7,
+        model: str = "gemini-3-flash-preview", temperature: float = 0.7,
         max_tokens: int = 8192,
     ) -> dict:
         contents = list(history) if history else []
@@ -426,7 +426,7 @@ class GeminiClient:
                     "name": "free",
                     "backend": "cli_oauth",
                     "creds_path": "~/.gemini/oauth_creds.json",
-                    "model": "gemini-3.1-pro-preview",
+                    "model": "gemini-3-flash-preview",
                     "enabled": True,
                 }
             ],

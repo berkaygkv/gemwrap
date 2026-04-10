@@ -15,7 +15,7 @@ Requires gemini-cli authenticated first (`gemini` → sign in via browser).
 ```bash
 gemwrap "Explain Python decorators"
 gemwrap --stream "Tell me a story"
-gemwrap -m gemini-2.5-pro "Complex task"
+gemwrap -m gemini-3.1-pro-preview "Complex task"
 gemwrap -s "You are a pirate" "What is recursion?"
 gemwrap --youtube "https://youtu.be/VIDEO_ID" "Summarize this video"
 gemwrap --image photo.png "Describe this image"
