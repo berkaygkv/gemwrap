@@ -7,7 +7,11 @@ from typing import Iterator, Optional
 
 import requests
 
-# OAuth client embedded in gemini-cli source (public, "installed app" type)
+# Public OAuth credentials from Google's official gemini-cli repo:
+# https://github.com/google-gemini/gemini-cli/blob/main/packages/core/src/code_assist/oauth2.ts
+# These are "installed app" type credentials — Google documents that the client secret
+# "is obviously not treated as a secret" for this app type, as it ships in distributed binaries.
+# They only identify the app; actual access requires user consent via browser sign-in.
 CLIENT_ID = "681255809395-oo8ft2oprdrnp9e3aqf6av3hmdib135j.apps.googleusercontent.com"
 CLIENT_SECRET = "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"
 TOKEN_URL = "https://oauth2.googleapis.com/token"
