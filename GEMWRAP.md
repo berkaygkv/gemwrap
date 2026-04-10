@@ -218,6 +218,7 @@ The CLI OAuth path is vastly superior for free usage. With 2 accounts you get ~2
 - **Token expiry**: Access tokens last ~1 hour. gemwrap auto-refreshes using the stored refresh token. Refresh tokens are long-lived but can be revoked by Google.
 - **YouTube videos**: Must be public or unlisted. One video per request. Max 8 hours of video per day. Uses real multimodal video+audio understanding, not transcript.
 - **Image upload**: Supports inline base64 images (png, jpg, gif, webp) via `--image` flag or `image=` parameter. PDFs and other file types are not supported.
+- **Model availability varies by account tier**: Larger models like `gemini-3.1-pro-preview` may return `MODEL_CAPACITY_EXHAUSTED` on free-tier accounts while working fine on Pro/Ultra accounts. If you hit capacity errors, pin to a higher-tier account with `-a <name>`.
 - **Rate limits are per-user**: Shared between gemwrap and gemini-cli itself (same OAuth token = same quota pool). If you use gemini-cli interactively, it eats into the same daily quota.
 
 ## File Structure
